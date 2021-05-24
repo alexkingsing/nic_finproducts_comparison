@@ -13,6 +13,17 @@ contribution_periods_val = {"Quincenal": 1/52,
                             "Anual": 1}
 capitalization_periods = ["Mensual", "Trimestral", "Bianual", "Anual"]
 
+# functions
+def row_cal(array, ir_save, ir_deposit, ir_stock, capi_save, capi_deposit, capi_stock, multi = True):
+    '''calculates the next row of a numpy array based on the input array and pre-specified parameters
+    returns an array with the same shape as the parent array'''
+
+    if multi == True:
+        return ((array[0] * (1 + ir_save)) + 1000, (array[1] * (1+ir_deposit)) + 1000, (array[2] * (1+ir_stock)) + 1000) # add previous value + gained interest per the period + contri
+    else:
+        return (array[0] * (1 + ir_save), array[1] * (1+ir_deposit), array[2] * (1+ir_stock)) # add previous value + gained interest per the period
+
+
 #configs
 st.set_page_config(layout= "wide")
 
@@ -86,6 +97,12 @@ elif option == page_options[2]: #CALCULATIONS (FORM 1)
 
     if submitted == True:
         st.write(F"SUCCESS {ir_save}")
+
+        first_row = np.full(3, contr_val)
+        second_row = np.apply_along_axis(row_cal, 0, first_row, ir_save, ir_deposit, ir_stock, capi_save, capi_deposit, capi_stock, multi = True)
+
+        st.write(first_row)
+        st.write(second_row)
 
 elif option == page_options[3]: #CALCULATIONS (FORM 1)
 
