@@ -1,4 +1,3 @@
-import numpy as np
 import plotly.graph_objects as go
 
 #useful lists and parameters
@@ -14,6 +13,7 @@ capitalization_periods = ["Mensual", "Trimestral", "Bianual", "Anual"]
 fin_prod_list = ["Cuenta", "Depósito", "Bolsa"]
 
 ##### FUNCTIONS ##################
+
 def row_cal(array, ir_save, ir_deposit, ir_stock, capitalization, multi = True):
     '''calculates the next row of a numpy array based on the input array and pre-specified parameters
     
@@ -40,6 +40,8 @@ def row_cal(array, ir_save, ir_deposit, ir_stock, capitalization, multi = True):
         array[2] * (interest_stock ** power)) 
         # add previous value + gained interest per the period
 
+
+
 def plot_data(df):
 
     data = df
@@ -57,4 +59,16 @@ def plot_data(df):
             name = column)
         )
 
+    fig.update_layout(legend = dict(
+            yanchor = "top",
+            y = 0.99,
+            xanchor = "left",
+            x = 0.01,
+            bgcolor = "Azure"
+        )
+    )
+
     return fig
+
+def key_figs(df):
+    pass
