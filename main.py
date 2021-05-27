@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from utils import *
+import edu
 
 #configs
 st.set_page_config(layout = "wide")
@@ -33,21 +34,33 @@ if option == page_options[0]: #INTRODUCTION SECTION __COMPLETED__
 elif option == page_options[1]: #EDUCATIONAL SECTION __WILL BE DONE AT THE END__
     st.header("Bienvenid@ a la sección educativa! \U0001F913 \U0001F4D6")
 
-    st.write('''
-    Esta sección esta orientada a proporcionar información sobre interés compuesto y como funciona, y sobretodo, porque es tan potente! \n 
-    Sin más preámbulo, empecemos!''')
+    st.write(edu.intro)
 
-    st.subheader("¿Qué es el interés?")
+    st.markdown(edu.index)
 
+    st.subheader("1. ¿Qué es el interés?")
 
-    st.subheader("Interés Simple vs Interés Compuesto")
+    st.write(edu.interest)
+    st.latex("I = R + In + Op")
+    st.write('''Listo! Hay mucho más que decir sobre interés, pero esperamos que esta introducción haya sido de su agrado. 
+    A continuación hablaremos de los 2 principales tipos de interés.''')
+    st.markdown("***") ## Section separator.
 
+    st.subheader("2. Tipos de interés")
+
+    st.write(edu.interest_types)
+    st.markdown("***") ## Section separator.
+
+    st.subheader(" 3.Interés Simple vs Interés Compuesto")
+
+    st.write(edu.interest_simvscomp)
+    st.markdown("***") ## Section separator.
 
 elif option == page_options[2]: #CALCULATIONS
 
     st.subheader("Escoge la configuración para hacer tu comparación de productos!")
     
-    with st.beta_expander("Click AQUI para esconder las opciones de configuración!", expanded = True):
+    with st.beta_expander("Click AQUI para esconder las opciones de configuración!", expanded = True): # CONFIG OPTIONS SECTION.
 
         with st.form("form"):
             
@@ -85,7 +98,6 @@ elif option == page_options[2]: #CALCULATIONS
             submitted = st.form_submit_button("Vamos!!")
             st.caption("Dar click acá cada vez que actualices data!")
 
-
     if submitted == True:
         last_row = np.full((3, 1), contr_val) ## CREATING THE INITIAL CONSTRUCTOR 2-D ARRAY BASED ON FINANCING OPTIONS. THIS WILL BE OVERWRITTEN AT THE LOOP.
         final_array = None
@@ -102,7 +114,7 @@ elif option == page_options[2]: #CALCULATIONS
 
         df = pd.DataFrame(final_array.T, columns = fin_prod_list, dtype = "float")
 
-        ### PLOT
+        ### PLOT AND TABLES SECTION ###
         col_1, col_2 = st.beta_columns([4,1])
 
         with col_1:
