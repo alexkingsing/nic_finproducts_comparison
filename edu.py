@@ -2,9 +2,9 @@ intro = '''
     Esta sección esta orientada a proporcionar información sobre interés compuesto y como funciona, y sobretodo, porque es tan potente! \n 
     Sin más preámbulo, empecemos!'''
 
-index = ''' 1. [¿Qué es el interés?](#qu-es-el-inter-s)
-2. [¿Tipos de interés?](#tipos-de-inter-s)
-3. [¿Interés Simple vs Interés Compuesto?](#inter-s-simple-vs-inter-s-compuesto) '''
+index = ''' 1. ¿Qué es el interés?
+2. ¿Tipos de interés?
+3. ¿Interés Simple vs Interés Compuesto? '''
 
 interest = ''' La manera más fácil de explicar el interés es: **La ganancia o utilidad que podemos obtener de una inversión.** \n
 ¿Pero cómo se justifica el interés? ¿De dónde viene? ¿Por qué tengo que darle dinero el banco/prestamista? Sin entrar en una larga historia sobre el origen de los intereses,
@@ -20,7 +20,64 @@ Organizaciones grandes como aseguradoras o bancos tienen complejos modelos estad
     Hay muchísimas maneras de calcular esta parte, pero en general esto dependerá de los objetivos de recaudación de la empresa. \n
 Matemáticamente el interés puede verse como:'''
 
-interest_types = ''' Dependiendo de la conversación que se este teniendo se puede decir que hay varios tipos de interés (tasa fija, variable, etc),
-sin embargo para nuestros propósitos discutiremos los dos principales ** Interés simple ** e ** Interés compuesto** '''
+interest_types_simple = ''' Dependiendo de la conversación que se este teniendo se puede decir que hay varios tipos de interés (tasa fija, variable, etc),
+sin embargo para nuestros propósitos discutiremos los dos principales ** Interés simple ** e ** Interés compuesto**. \n 
+OJO: Aunque en términos generales estos tipos de interés son estándar, existen diferencias en sus aplicaciones dependiendo del país o institución. **Por favor siempre preguntar y verificar!** \n 
+Vamos!! \n
+* **Interés simple**: El interés simple es, a como lo dice su nombre, simple! ¿Pero qué quiere decir esto? En pocas palabras, esto quiere decir que **no hay interés sobre interés**
+ya sea como deuda o como ganancia, ***no pagas interés sobre el interés de la deuda, ni tampoco obtienes interés sobre las ganancias obtenidas***
+el interés simple es una tasa "bruta" que se aplica al principal (en muchos casos diariamente). El interés es a su vez **muy raro** en la vida real, la mayoría del tiempo los préstamos o inversiones funcionan con interés compuesto
+¿Pero esto sigue siendo un poco abstracto no? Intentemos con un ejemplo!\n
+Antes que todo veamos la fórmula para cálcular el interés:
+  '''
+interest_types_simple_pt2 = '''
+Esto se lee -> El interés es igual al principal X uno más la tasa de interés.\n
+Ahora si! Vamos al **ejemplo**: Imagina que tomas un préstamo de 10,000 USD para comprar un vehículo a una tasa de interés de 5% anual por 5 años. 
+Un cálculo simple nos dice que el interés anual es de 100 USD anuales.
+Y listo! Si solo tuvieras que hacer un pago al año, pagarías exactamente 2,100 USD. 2,000 (principal / 5, porque es un solo año) + 100 (interés, 5% de 2,000). \n
+Pero que pasa si te retrasas y en vez de pagar exactamente al año? Dependiendo de los términos de tú préstamo podrías estar sujeto a una mora o penalización, pero en cuanto a los interes
+**tus intereses a la fecha de pago NO generan más interes** el ÚNICO interés generado es aquel que se origina del principal.
+Esta premisa (el interés no genera más interés) es lo que hace que este se llame interés simple. \n
+Dicho eso, es ahora de pasar al más interesante de ambos, el interés compuesto!
+ '''
 
-interest_simvscomp = ''' C '''
+interest_types_compound = '''
+* **Interés compuesto**: El interés compuesto, a diferencia del interés simple, SI genera interés sobre interés, y este es su gran poder! (o gran maldición, en algunos casos).
+Básicamente funciona de la siguiente manera: 
+  1. El interés se aplica cada cierto tiempo (mensual, trimestral, anual, etc) A esto se le llama **periodo de capitalización**, y suele representarse en fracción del año.
+  2. Este interés inmediatamente se adiciona al capital principal
+  3. Para el próximo periodo, se recalcula el interes de forma (Principal + interés anterior) * tasa de interés = nuevo interés
+  4. *Ad infinitum*\n
+Al final de esta sección se incluirá un poco más de explicación de la fórmula, pero la forma general del interés compuesto se define matemáticamente así:
+'''
+
+interest_types_compound_pt2 = '''
+Esto se lee: El valor final(Vf) es igual a, el valor inicial(Vi) por **1 más la tasa de interés(r) dividido entre el período de capitalización(n** elevado **a la tasa de interés dividido entre el período de capitalización**
+Si el periodo de capitalización es anual esto se simplifica a:
+'''
+
+interest_types_compound_pt3 =  '''
+Pero vamos, para verlo vía fórmulas es fácil encontrar un libro. ¿Qué tal un ejemplo que ilustre la situación? \n
+ **Ejemplo**: Tú obtienes un certificado de depósito por valor de 1,000 USD a 1 año con un tasa de interés del 10% (ilustrativa).
+ Al final del año, tú recibes 1,000 + 10% = 1,100, pero para los olvidadizos entre nosotros, si se nos va y no retiramos el depósito, el banco automáticamente lo invierte de nuevo!
+ pero entonces, ¿qué pasa con nuestro dinero? pues sucede que está renovación es casi como un nuevo certificado, pero ahora el principal no es 1,000, sino 1,100!
+ Esto quiero decir que el interés al segundo año sería 1,100 + 10% = 1,210 USD! **O sea, obtuvimos interés sobre nuestro interés!**\n
+ ¿Aún no te impresiona? pues ve en la próxima sección y mirarás el poder y la magia del interés compuesto!
+'''
+interest_simvscomp = '''
+Una vez definido ambos tipos interés, una buena manera de ver la gran diferencia entre ambos es con una simple comparación: \n
+Imagina el siguiente escenario. Tú tienes 1,000 USD que piensas invertir por 10 años y tienes dos opciones de inversión:
+1. Un bono que paga 5% de interés al año, por 10 años.
+2. Un certificado de depósito que paga 5% de interés al año.
+De manera simple ¿Cuál escogerías?
+A manera general suenan igual, ¿no? pues no lo son! \n
+Los bonos son instrumentos financieros que pagan un **interés simple** es decir, tú retorno **SIEMPRE** es el mismo. Este bono pagaría entonces **50 * 10 = 500 USD en 10 años.** \n
+¿Pero y el certificado? Bueno, el certificado con vencimiento anual se renueva cada año, es decir, tus interés del año anterior se suman al principal para formar tú nuevo principal.
+Usando la fórmula anteriormente mostrada obtenemos que a 10 años, este certificado de depósito te generaría aprox. **628.90 USD en interés!** \n
+Dirán "Elaine, Alex, **eso solo es una diferencia de 129 USD**, no es mucho para 10 años" y a rasgos generales tendrías razón, pero he aquí la magia del interés compuesto, extendamos esto a 30 años.
+Y, cómo un dibujo dice más que mil palabras, veámoslo en una gráfica!
+'''
+
+interest_simvscomp_pt2 = ''' '''
+
+annex = ''' '''

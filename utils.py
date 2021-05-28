@@ -1,7 +1,9 @@
 import plotly.graph_objects as go
+import numpy as np
+import pandas as pd
 
 #useful lists and parameters
-page_options = ["Intro", "Educativo", "Calculo"]
+page_options = ["Intro", "Educativo", "Calculo int. compuesto"]
 contribution_periods = ["Quincenal", "Mensual", "Trimestral", "Bianual", "Anual"]
 contribution_periods_val = {"Quincenal": 1/52,
                             "Mensual": 1/12,
@@ -40,8 +42,6 @@ def row_cal(array, ir_save, ir_deposit, ir_stock, capitalization, multi = True):
         array[2] * (interest_stock ** power)) 
         # add previous value + gained interest per the period
 
-
-
 def plot_data(df):
 
     data = df
@@ -70,5 +70,35 @@ def plot_data(df):
 
     return fig
 
-def key_figs(df):
-    pass
+def sample_plot() -> any:
+
+    val = 1000 # default value
+    base_simp = [] # placeholder list for simple interest build
+    base_comp = [] #placeholder list for compound interest build
+
+    for i in range(0,30):
+        base_simp.append( 50 * (i))
+        base_comp.append(val * ((1.05)**i))
+
+    base_comp = np.array(base_comp)
+    base_comp = base_comp - val
+    base_comp = base_comp.tolist()
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+    x = list(range(0,30)),
+    y = base_simp,
+    mode = "lines + markers",
+    name = "Interés simple acumulado",
+    line = dict(color = "green"))
+    )
+
+    fig.add_trace(go.Scatter(
+    x = list(range(0,30)),
+    y = base_comp,
+    mode = "lines + markers",
+    name = "Interés compuesto acumulado")
+    )
+
+    return fig

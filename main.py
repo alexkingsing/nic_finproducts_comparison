@@ -48,13 +48,28 @@ elif option == page_options[1]: #EDUCATIONAL SECTION __WILL BE DONE AT THE END__
 
     st.subheader("2. Tipos de interés")
 
-    st.write(edu.interest_types)
+    st.write(edu.interest_types_simple)
+    st.latex("I = P * (1+R)")
+    st.write(edu.interest_types_simple_pt2)
+    st.write(edu.interest_types_compound)
+    st.latex(r'''
+        V_f = V_i * (1 + {r \over n}) ^ {r \over n}
+        ''')
+    st.write(edu.interest_types_compound_pt2)
+    st.latex(r'''
+    V_f = V_i * ( 1 + r) ^ r
+    ''')
+    st.write(edu.interest_types_compound_pt3)
     st.markdown("***") ## Section separator.
 
     st.subheader(" 3.Interés Simple vs Interés Compuesto")
 
     st.write(edu.interest_simvscomp)
+    st.plotly_chart(sample_plot(), use_container_width = True)
+    st.write(edu.interest_simvscomp_pt2)
     st.markdown("***") ## Section separator.
+
+    
 
 elif option == page_options[2]: #CALCULATIONS
 
