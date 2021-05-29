@@ -1,15 +1,15 @@
 import numpy as np
 import pandas as pd
 import streamlit as st
-from utils import *
 import edu
+from utils import *
 
 #configs
 st.set_page_config(layout = "wide")
 
 # begins here
 
-st.title("La Magia del interés compuesto")
+st.title("El poder del interés compuesto")
 st.sidebar.title("Escoge como seguir!")
 option = st.sidebar.radio("", page_options, index = 0)
 
@@ -20,58 +20,73 @@ if option == page_options[0]: #INTRODUCTION SECTION __COMPLETED__
 
     st.write('''Este proyecto que nace del deseo de mejorar la educación financiera de la población Nicaraguense (o hispanohablante en general) en materia de inversiones. 
     Una de las más potentes (y relativamente simple) formas de hacer crecer tú dinero es invirtiendolo en productos financieros! Existen muchos (Depósitos, acciones, ETFs, Fondos Mutuos, etc
-    que no son el foco de este proyecto. Acá nos centraremos en productos comúnes, simples, pero igualmente para potentes!  
+    que no son el foco de este proyecto. Acá nos centraremos en productos comúnes, simples, pero igualmente potentes para multiplicar tú dinero! \U0001F4B8 \U0001F4B8 \U0001F4B8
 
-    \n Esperamos que luego de usar esta herramienta puedas comprender mucho mejor como puedes usar las inversiones y el interés para hacer creer tu dinero!, 
+    \n Esperamos que luego de usar esta herramienta puedas comprender mucho mejor como puedes usar las inversiones y el interés para hacer creer tu dinero!,
     o si ya tienes conocimento puedes usar la herramienta para experimentar con tus futuras ganancias.
 
-    \n Este es un proyecto conjunto entre **Elaine Miranda** CEO de https://plataconplatica.com/ y **Alexander King Sing** https://www.linkedin.com/in/alexanderkingsing/!''')
+    \n Este es un proyecto de **Alexander King Sing** \U0001F4CC https://www.linkedin.com/in/alexanderkingsing/! inspirado en el trabajo de **Elaine Miranda** CEO \U0001F4BC de https://plataconplatica.com/ y ''')
 
     st.subheader("Para empezar!")
 
-    st.write(f"Puedes aprender sobre interés en la sección **Educativa** o si solo quieres calcular tus ganancias puedes usar la opción de **{page_options[2]}**.")
+    st.write(f"Puedes aprender sobre interés en la sección **{page_options[1]}** \U0001F4D6 o si solo quieres calcular tus ganancias puedes usar la opción de **{page_options[2]}** \U0001F4CA.")
 
-elif option == page_options[1]: #EDUCATIONAL SECTION __WILL BE DONE AT THE END__
+elif option == page_options[1]: #EDUCATIONAL SECTION __COMPLETED__
     st.header("Bienvenid@ a la sección educativa! \U0001F913 \U0001F4D6")
 
     st.write(edu.intro)
-
     st.markdown(edu.index)
 
-    st.subheader("1. ¿Qué es el interés?")
-
+    st.subheader("1. ¿Qué es el interés? \U0001F4B1")
     st.write(edu.interest)
     st.latex("I = R + In + Op")
     st.write('''Listo! Hay mucho más que decir sobre interés, pero esperamos que esta introducción haya sido de su agrado. 
     A continuación hablaremos de los 2 principales tipos de interés.''')
     st.markdown("***") ## Section separator.
 
-    st.subheader("2. Tipos de interés")
-
+    st.subheader("2. Tipos de interés \U0001F4B2")
     st.write(edu.interest_types_simple)
-    st.latex("I = P * (1+R)")
+    st.latex(r"I = P * r ")
     st.write(edu.interest_types_simple_pt2)
     st.write(edu.interest_types_compound)
     st.latex(r'''
-        V_f = V_i * (1 + {r \over n}) ^ {r \over n}
+        V_f = P * (1 + {r \over n}) ^ {r \over n}
         ''')
     st.write(edu.interest_types_compound_pt2)
     st.latex(r'''
-    V_f = V_i * ( 1 + r) ^ r
+    V_f = P * ( 1 + r) ^ n
     ''')
     st.write(edu.interest_types_compound_pt3)
     st.markdown("***") ## Section separator.
 
-    st.subheader(" 3.Interés Simple vs Interés Compuesto")
-
+    st.subheader("3. Interés Simple vs Interés Compuesto \U0001F4B0")
     st.write(edu.interest_simvscomp)
     st.plotly_chart(sample_plot(), use_container_width = True)
     st.write(edu.interest_simvscomp_pt2)
     st.markdown("***") ## Section separator.
-
     
+    st.subheader("Anexo \U0001F913")
+    st.write(edu.annex)
+    st.latex(r"I = P * r  \qquad (1)")
+    st.write(edu.annex_2)
+    st.latex(r"V_f = P + (I)  \qquad (2)")
+    st.write(edu.annex_3)
+    st.latex(r"V_f = P + (P*r) \qquad Substituyendo \: (1) \: en \: (2)")
+    st.latex(r"V_f = P * (1 + r) \qquad Agrupando \: obtenemos \: (3)")
+    st.write(edu.annex_4)
+    st.latex(r"V_f = P + I_0 + I_1 \qquad (4)") 
+    st.write(edu.annex_5)
+    st.latex(r"V_f = P + (P * r) + (P * (1 + r)) \qquad Substituyendo \: (1) \: y \: (3) \: en \: (4)")
+    st.write(edu.annex_6)
+    st.latex(r"V_f = P * (1 + r) * (1 * (1 + r)) \qquad Agrupando \: (P)")
+    st.latex(r"V_f = P * (1 + r) * (1 + r) \qquad Simplificando")
+    st.write(edu.annex_7)
+    st.latex(r"V_f = P * (1+r)^2 \qquad Simplificando \: potencia")
+    st.write(edu.annex_8)
+    st.latex(r"V_f = P * ( 1 + r) ^ n \qquad Generalizando \: para \: todos \: los \: períodos \: n")
+    st.write(edu.annex_9)
 
-elif option == page_options[2]: #CALCULATIONS
+elif option == page_options[2]: #CALCULATIONS __COMPLETED__
 
     st.subheader("Escoge la configuración para hacer tu comparación de productos!")
     
@@ -79,7 +94,7 @@ elif option == page_options[2]: #CALCULATIONS
 
         with st.form("form"):
             
-            col1, col2, col3, col4, col5, col6 = st.beta_columns(6)
+            col1, col2, col3, col4, col5 = st.beta_columns(5)
             
             with col1:
                 ir_save = st.number_input("Interés anual de Cuenta de Ahorros", min_value = 0.0, value = 1.0, step = 0.1, key = "save") / 100
@@ -91,13 +106,9 @@ elif option == page_options[2]: #CALCULATIONS
                 ir_stock = st.number_input("Retorno anual de la Bolsa de Valores", min_value = 0.0, value = 5.0, step = 0.1, key = "stock") / 100
 
             with col4:
-                capitalization = st.selectbox("Periodo de capitalización (cada cuanto ganas interés!)", capitalization_periods, index = 3)
-                capitalization = contribution_periods_val[capitalization]           
+                periods = st.number_input("Por cuantos AÑOS deseas invertir este dinero?", min_value = 1, value = 10, step = 1)
             
             with col5:
-                years = st.number_input("Por cuantos AÑOS deseas invertir este dinero?", min_value = 1, value = 3, step = 1)
-            
-            with col6:
                 multiple = st.radio("Decide si prefieres ver la evolución de una única inversión o de varios aportes!", 
                             ["Contribución única", "Múltiples contribuciones"], 
                             index = 0)
@@ -110,17 +121,17 @@ elif option == page_options[2]: #CALCULATIONS
                 Se aportará lo mismo independiente de las diferencias en vencimientos de los productos financieros.''', 
                 value = 1000, step = 100)
 
-            submitted = st.form_submit_button("Vamos!!")
+            submitted = st.form_submit_button("Vamos!!") ## MANDATORY BOOLEAN OPTION
             st.caption("Dar click acá cada vez que actualices data!")
 
     if submitted == True:
         last_row = np.full((3, 1), contr_val) ## CREATING THE INITIAL CONSTRUCTOR 2-D ARRAY BASED ON FINANCING OPTIONS. THIS WILL BE OVERWRITTEN AT THE LOOP.
         final_array = None
 
-        for year in range(1, (years + 1)):
-            next_row = np.apply_along_axis(row_cal, 0, last_row, ir_save, ir_deposit, ir_stock, capitalization, multi = multiple) # calculating next
+        for year in range((periods)): # WE NEED +1 TO GET THE CORRECT LENGHT
+            next_row = np.apply_along_axis(row_cal, 0, last_row, ir_save, ir_deposit, ir_stock, multi = multiple) # calculating next array to concat
             
-            if year == 1: #first item is a bit different
+            if year == 0: #first item is a bit different
                 final_array = np.concatenate((last_row, next_row), axis = 1)
                 last_row = next_row
             else:
@@ -138,12 +149,15 @@ elif option == page_options[2]: #CALCULATIONS
             
         with col_2:
             
-            sum_df = df.iloc[-1,:].sort_values(ascending=False)
+            sum_df = df.iloc[-1,:].sort_values(ascending=False) # RETRIEVING ONLY LAST ROW OF EVERY COLUMN
 
-            st.write("Los retornos en el último año son:")
+            if multiple == True:
+                st.write(f"Invertiste **{contr_val * periods} USD** en total. El valor de está inversión **al final de los {periods} años** es:")
+            else:
+                st.write(f"Invertiste **{contr_val} USD** en total. El valor de está inversión **al final de los {periods} años** es:")
 
             st.table(sum_df)
 
-            dif = (sum_df.max() - sum_df.min())
+            dif = (sum_df.max() - sum_df.min()) 
 
-            st.write(f"La diferencia entre el máximo y el mínimo a los **{years} años** es de: **{dif:.2f}** USD")
+            st.write(f"La diferencia entre el máximo y el mínimo a los **{periods} años** de invertir es de: **{dif:.2f}** USD")

@@ -1,48 +1,40 @@
+from pandas.tseries.offsets import Tick
 import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
 
 #useful lists and parameters
 page_options = ["Intro", "Educativo", "Calculo int. compuesto"]
-contribution_periods = ["Quincenal", "Mensual", "Trimestral", "Bianual", "Anual"]
-contribution_periods_val = {"Quincenal": 1/52,
-                            "Mensual": 1/12,
-                            "Trimestral": 1/4,
-                            "Bianual": 1/2,
-                            "Anual": 1}
-
-capitalization_periods = ["Mensual", "Trimestral", "Bianual", "Anual"]
 fin_prod_list = ["Cuenta", "Depósito", "Bolsa"]
 
 ##### FUNCTIONS ##################
 
-def row_cal(array, ir_save, ir_deposit, ir_stock, capitalization, multi = True):
+def row_cal(array, ir_save, ir_deposit, ir_stock, multi) -> np.array:
     '''calculates the next row of a numpy array based on the input array and pre-specified parameters
     
     RETURNS an array with the same shape as the parent array with new values    '''
 
     # environment variables of the function for cleaner read
 
-    interest_save = 1 + (ir_save * capitalization)
-    interest_deposit = 1 + (ir_deposit * capitalization)
-    interest_stock = 1 + (ir_stock * capitalization)
-
-    power = 1 / capitalization
+    interest_save = 1 + ir_save 
+    interest_deposit = 1 + ir_deposit
+    interest_stock = 1 + ir_stock
     
     if multi == True:
     
-        return ((array[0] * (interest_save ** power)) + 1000, 
-        (array[1] * (interest_deposit ** power)) + 1000, 
-        (array[2] * (interest_stock ** power)) + 1000) 
+        return ((array[0] * (interest_save)) + 1000, 
+        (array[1] * (interest_deposit)) + 1000, 
+        (array[2] * (interest_stock)) + 1000) 
         # add previous value + gained interest per the period + contri
     
     else:
-        return (array[0] * (interest_save ** power), 
-        array[1] * (interest_deposit ** power), 
-        array[2] * (interest_stock ** power)) 
+        return ((array[0] * interest_save), 
+        (array[1] * interest_deposit), 
+        (array[2] * interest_stock)) 
+
         # add previous value + gained interest per the period
 
-def plot_data(df):
+def plot_data(df : pd.DataFrame) -> go.Figure:
 
     data = df
     columns = list(data.columns)
@@ -64,8 +56,13 @@ def plot_data(df):
             y = 0.99,
             xanchor = "left",
             x = 0.01,
-            bgcolor = "Azure"
-        )
+            bgcolor = "Azure"),
+        xaxis = dict(
+            tickmode = "linear",
+            tick0 = 0,
+            dtick = 1),
+        xaxis_title = "Años",
+        yaxis_title = "Dólares"
     )
 
     return fig
@@ -77,7 +74,7 @@ def sample_plot() -> any:
     base_comp = [] #placeholder list for compound interest build
 
     for i in range(0,30):
-        base_simp.append( 50 * (i))
+        base_simp.append(50 * (i))
         base_comp.append(val * ((1.05)**i))
 
     base_comp = np.array(base_comp)

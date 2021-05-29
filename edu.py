@@ -2,9 +2,9 @@ intro = '''
     Esta sección esta orientada a proporcionar información sobre interés compuesto y como funciona, y sobretodo, porque es tan potente! \n 
     Sin más preámbulo, empecemos!'''
 
-index = ''' 1. ¿Qué es el interés?
-2. ¿Tipos de interés?
-3. ¿Interés Simple vs Interés Compuesto? '''
+index = ''' 1. ¿Qué es el interés? \U0001F4CD
+2. ¿Tipos de interés? \U0001F4CD
+3. ¿Interés Simple vs Interés Compuesto? \U0001F4CD'''
 
 interest = ''' La manera más fácil de explicar el interés es: **La ganancia o utilidad que podemos obtener de una inversión.** \n
 ¿Pero cómo se justifica el interés? ¿De dónde viene? ¿Por qué tengo que darle dinero el banco/prestamista? Sin entrar en una larga historia sobre el origen de los intereses,
@@ -20,6 +20,8 @@ Organizaciones grandes como aseguradoras o bancos tienen complejos modelos estad
     Hay muchísimas maneras de calcular esta parte, pero en general esto dependerá de los objetivos de recaudación de la empresa. \n
 Matemáticamente el interés puede verse como:'''
 
+###################################### SECTION SEPARATOR #######################################
+
 interest_types_simple = ''' Dependiendo de la conversación que se este teniendo se puede decir que hay varios tipos de interés (tasa fija, variable, etc),
 sin embargo para nuestros propósitos discutiremos los dos principales ** Interés simple ** e ** Interés compuesto**. \n 
 OJO: Aunque en términos generales estos tipos de interés son estándar, existen diferencias en sus aplicaciones dependiendo del país o institución. **Por favor siempre preguntar y verificar!** \n 
@@ -31,15 +33,17 @@ el interés simple es una tasa "bruta" que se aplica al principal (en muchos cas
 Antes que todo veamos la fórmula para cálcular el interés:
   '''
 interest_types_simple_pt2 = '''
-Esto se lee -> El interés es igual al principal X uno más la tasa de interés.\n
+Esto se lee -> El interés es igual al principal "P" por la tasa de interés del período.\n
 Ahora si! Vamos al **ejemplo**: Imagina que tomas un préstamo de 10,000 USD para comprar un vehículo a una tasa de interés de 5% anual por 5 años. 
-Un cálculo simple nos dice que el interés anual es de 100 USD anuales.
-Y listo! Si solo tuvieras que hacer un pago al año, pagarías exactamente 2,100 USD. 2,000 (principal / 5, porque es un solo año) + 100 (interés, 5% de 2,000). \n
+Un cálculo simple nos dice que el interés a pagar por año es de 500 USD anuales, esto es la *ganancia* de quién emite el préstamo. Y listo! \n
 Pero que pasa si te retrasas y en vez de pagar exactamente al año? Dependiendo de los términos de tú préstamo podrías estar sujeto a una mora o penalización, pero en cuanto a los interes
 **tus intereses a la fecha de pago NO generan más interes** el ÚNICO interés generado es aquel que se origina del principal.
 Esta premisa (el interés no genera más interés) es lo que hace que este se llame interés simple. \n
-Dicho eso, es ahora de pasar al más interesante de ambos, el interés compuesto!
- '''
+Dicho eso, es ahora de pasar al más interesante de ambos, el interés compuesto! \n
+
+'''
+
+###################################### SECTION SEPARATOR #######################################
 
 interest_types_compound = '''
 * **Interés compuesto**: El interés compuesto, a diferencia del interés simple, SI genera interés sobre interés, y este es su gran poder! (o gran maldición, en algunos casos).
@@ -52,7 +56,7 @@ Al final de esta sección se incluirá un poco más de explicación de la fórmu
 '''
 
 interest_types_compound_pt2 = '''
-Esto se lee: El valor final(Vf) es igual a, el valor inicial(Vi) por **1 más la tasa de interés(r) dividido entre el período de capitalización(n** elevado **a la tasa de interés dividido entre el período de capitalización**
+Esto se lee: El valor final(Vf) es igual a, el Principal (P) por **1 más la tasa de interés(r) dividido entre el período de capitalización(n)** elevado **a la tasa de interés dividido entre el período de capitalización**.
 Si el periodo de capitalización es anual esto se simplifica a:
 '''
 
@@ -64,6 +68,9 @@ Pero vamos, para verlo vía fórmulas es fácil encontrar un libro. ¿Qué tal u
  Esto quiero decir que el interés al segundo año sería 1,100 + 10% = 1,210 USD! **O sea, obtuvimos interés sobre nuestro interés!**\n
  ¿Aún no te impresiona? pues ve en la próxima sección y mirarás el poder y la magia del interés compuesto!
 '''
+
+###################################### SECTION SEPARATOR #######################################
+
 interest_simvscomp = '''
 Una vez definido ambos tipos interés, una buena manera de ver la gran diferencia entre ambos es con una simple comparación: \n
 Imagina el siguiente escenario. Tú tienes 1,000 USD que piensas invertir por 10 años y tienes dos opciones de inversión:
@@ -74,10 +81,59 @@ A manera general suenan igual, ¿no? pues no lo son! \n
 Los bonos son instrumentos financieros que pagan un **interés simple** es decir, tú retorno **SIEMPRE** es el mismo. Este bono pagaría entonces **50 * 10 = 500 USD en 10 años.** \n
 ¿Pero y el certificado? Bueno, el certificado con vencimiento anual se renueva cada año, es decir, tus interés del año anterior se suman al principal para formar tú nuevo principal.
 Usando la fórmula anteriormente mostrada obtenemos que a 10 años, este certificado de depósito te generaría aprox. **628.90 USD en interés!** \n
-Dirán "Elaine, Alex, **eso solo es una diferencia de 129 USD**, no es mucho para 10 años" y a rasgos generales tendrías razón, pero he aquí la magia del interés compuesto, extendamos esto a 30 años.
+Dirás "**Eso solo es una diferencia de 129 USD**, no es mucho para 10 años" y a rasgos generales tendrías razón, pero he aquí la magia del interés compuesto, extendamos esto a 30 años.
 Y, cómo un dibujo dice más que mil palabras, veámoslo en una gráfica!
 '''
 
-interest_simvscomp_pt2 = ''' '''
+interest_simvscomp_pt2 = '''
+¿Ven la diferencia? Misma tasa de interés, mismo período de tiempo, pero el certificado genera el **DOBLE** de intereses que el bono!
+Exactamente la diferencia entre ambos es **1,666.86 USD**. \n
+Con esto podemos visualizar la clave que le da su poder al interés compuesto **entre más pronto inicies, más grande será tú retorno en el futuro!**. \n
+Finalmente una nota: Los productos financieros utilizados acá son para propósitos ilustrativos, al momento de escoger una inversión hay MUCHO más que considerar que solo el retorno
+(riesgo, liquidez, ForEx, etc). **Esto no es consejo de inversión**.'''
 
-annex = ''' '''
+###################################### SECTION SEPARATOR #######################################
+
+annex = '''
+**Esta sección es completamente opcional** y la derivación matemática del interés compuesto: \n
+Antes que todo recordemos la fórmula más básica para obtener el interés:
+'''
+
+annex_2 = '''
+Con esta fórmula podemos calcular el interés que nos generaría una inversión luego de un período. \n
+Luego, para encontrar el **total** de dinero que tendríamos al final de ese período tenemos que sumar el principal, o inversión, a los intereses:
+'''
+
+annex_3 = '''
+Ahora haremos un poco de algebra y lo explicaremos una vez concluido!
+'''
+
+annex_4 = '''
+Dejamé explicar lo que paso acá: \n
+1. Primero substituimos la primera equación (1) en la (2) para tener una forma común de ambas.
+2. Luego, usando un poco de álgebra, agrupamos los elementos en común (La P) y obtenemos una nueva equación (3)
+Excelente! con esto podemos cálcular cualquier valor final y solo necesitamos saber la tasa de interés del período. Pero, ¿qué pasa si tenemos más de un período? \n
+Nuestra equación para más de un período se vería así:
+'''
+
+annex_5 = '''
+Hay algo que notar acá! Interés para el 2do período (I sub-uno) depende NO del principal, sino del **Valor final del período anterior**. De forma que:
+'''
+
+annex_6 = '''
+Pero es bastante complicado! Y solo para dos períodos! Una vez más, un poco de algebra nos salva:
+'''
+
+annex_7 = '''
+Esto es bastante más legible, ¿no? Pero los que están en secundaria notarán que estamos multiplicando dos veces lo mismo. ¿No había algo para simplificar eso? Claro que sí!
+'''
+
+annex_8 = '''
+Y listo! Si seguimos bien hasta acá notarás que, independientemente de cuantos períodos apliquemos, regresaremos a la misma forma, por lo tanto podemos definir que:
+'''
+
+annex_9 = '''
+Mucho más bonito, ¿no? y si te fijas bien está **es la misma fórmula** que explicamos en la sección de interés compuesto para el escenario de interés capitalizable anualmente. \n
+Faltarían unos pocos pasos para obtener la forma general que toma en cuenta todos los períodos (mensual, trimestral, etc), pero con esto se visualiza claramente la deducción de como llegamos
+al interés compuesto desde su definición inicial, hasta la fórmula que cualquier banquero te puede recitar de memoria!
+'''
