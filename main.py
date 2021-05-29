@@ -25,7 +25,9 @@ if option == page_options[0]: #INTRODUCTION SECTION __COMPLETED__
     \n Esperamos que luego de usar esta herramienta puedas comprender mucho mejor como puedes usar las inversiones y el interés para hacer creer tu dinero!,
     o si ya tienes conocimento puedes usar la herramienta para experimentar con tus futuras ganancias.
 
-    \n Este es un proyecto de **Alexander King Sing** \U0001F4CC https://www.linkedin.com/in/alexanderkingsing/! inspirado en el trabajo de **Elaine Miranda** CEO \U0001F4BC de https://plataconplatica.com/ y ''')
+    \n Este es un proyecto de **Alexander King Sing** \U0001F4CC https://www.linkedin.com/in/alexanderkingsing/! inspirado en el trabajo de **Elaine Miranda** CEO \U0001F4BC de https://plataconplatica.com/ 
+    
+    \n DISCLAIMER: Está aplicación **NO** constituye consejo de inversión.''')
 
     st.subheader("Para empezar!")
 
