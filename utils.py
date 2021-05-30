@@ -22,9 +22,9 @@ def row_cal(array, ir_save, ir_deposit, ir_stock, contri, multi) -> np.array:
     
     if multi == True:
     
-        return ((array[0] * (interest_save)) + 1000, 
-        (array[1] * (interest_deposit)) + 1000, 
-        (array[2] * (interest_stock)) + 1000) 
+        return ((array[0] * (interest_save)) + contri, 
+        (array[1] * (interest_deposit)) + contri, 
+        (array[2] * (interest_stock)) + contri) 
         # add previous value + gained interest per the period + contri
     
     else:
