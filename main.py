@@ -131,7 +131,7 @@ elif option == page_options[2]: #CALCULATIONS __COMPLETED__
         final_array = None
 
         for year in range((periods)): # WE NEED +1 TO GET THE CORRECT LENGHT
-            next_row = np.apply_along_axis(row_cal, 0, last_row, ir_save, ir_deposit, ir_stock, multi = multiple) # calculating next array to concat
+            next_row = np.apply_along_axis(row_cal, 0, last_row, ir_save, ir_deposit, ir_stock, contr_val ,multi = multiple) # calculating next array to concat
             
             if year == 0: #first item is a bit different
                 final_array = np.concatenate((last_row, next_row), axis = 1)

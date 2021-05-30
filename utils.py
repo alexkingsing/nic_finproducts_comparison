@@ -9,7 +9,7 @@ fin_prod_list = ["Cuenta", "Depósito", "Bolsa"]
 
 ##### FUNCTIONS ##################
 
-def row_cal(array, ir_save, ir_deposit, ir_stock, multi) -> np.array:
+def row_cal(array, ir_save, ir_deposit, ir_stock, contri, multi) -> np.array:
     '''calculates the next row of a numpy array based on the input array and pre-specified parameters
     
     RETURNS an array with the same shape as the parent array with new values    '''
