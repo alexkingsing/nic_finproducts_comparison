@@ -27,11 +27,22 @@ if option == page_options[0]: #INTRODUCTION SECTION __COMPLETED__
 
     \n Este es un proyecto de **Alexander King Sing** \U0001F4CC https://www.linkedin.com/in/alexanderkingsing/! inspirado en el trabajo de **Elaine Miranda** CEO \U0001F4BC de https://plataconplatica.com/ 
     
-    \n DISCLAIMER: Está aplicación **NO** constituye consejo de inversión.''')
+    \n **DISCLAIMER**: Está aplicación **NO** constituye consejo de inversión.''')
 
     st.subheader("Para empezar!")
 
-    st.write(f"Puedes aprender sobre interés en la sección **{page_options[1]}** \U0001F4D6 o si solo quieres calcular tus ganancias puedes usar la opción de **{page_options[2]}** \U0001F4CA.")
+    st.write(f'''Puedes aprender sobre interés en la sección **{page_options[1]}** \U0001F4D6 
+    o si solo quieres calcular tus ganancias puedes usar la opción de **{page_options[2]}** \U0001F4CA.
+    \n Asimismo, algunas notes sobre el origen de los valores por defecto de la calculadora:
+    \n * Los valores de interés / retorno por defecto de **cuentas de ahorro** fueron obtenidos en base a experiencia personal y no representan un compromiso legal u otro
+    con ninguna entidad financiera en particular. Las tasas están sujetas a discreción de la entidad emisora + aspectos regulatorios. Por favor consultar con su banco.
+    \n * Los valores de interés / retorno por defecto de **certificados de depósito** fueron obtenidos en base a experiencia personal con este producto y no representan un compromiso
+    con ninguna entidad financiera en particular. Las tasas están sujetas a discreción de la entidad emisora + aspectos regulatorios. Por favor consultar con su banco.
+    \n * Los valores de interés / retorno por defecto del **mercado de bolsa de valores** fueron obtenidos mediante investigación de fuentes oficiales y extrapolación personal.
+    La información histórica (auditada) puede encontrarse en la página del Banco Central de Nicaragua:
+    \n   * https://www.bcn.gob.ni/publicaciones/periodicidad/trimestral/valores/index.php
+    \nSiempre por favor recordar: **Cualquier inversión tiene un RIESGO**. Si este riesgo es adecuado para el inversionista es un ejercicio **PERSONAL**.
+    Si tiene dudas consulte con su banco, investigue más al respecto, o avoquése con un experto financiero!''')
 
 elif option == page_options[1]: #EDUCATIONAL SECTION __COMPLETED__
     st.header("Bienvenid@ a la sección educativa! \U0001F913 \U0001F4D6")
@@ -42,7 +53,8 @@ elif option == page_options[1]: #EDUCATIONAL SECTION __COMPLETED__
     st.subheader("1. ¿Qué es el interés? \U0001F4B1")
     st.write(edu.interest)
     st.latex("I = R + In + Op")
-    st.write('''Listo! Hay mucho más que decir sobre interés, pero esperamos que esta introducción haya sido de su agrado. 
+    st.write('''*Esto se lee*: "El interés es igual a: El riesgo (en porcentaje) + el porcentaje de inflación esperado + el costo de oportunidad (en porcentaje)
+    \n Listo! Hay mucho más que decir sobre interés, pero esperamos que esta introducción haya sido de su agrado. 
     A continuación hablaremos de los 2 principales tipos de interés.''')
     st.markdown("***") ## Section separator.
 
@@ -50,6 +62,8 @@ elif option == page_options[1]: #EDUCATIONAL SECTION __COMPLETED__
     st.write(edu.interest_types_simple)
     st.latex(r"I = P * r ")
     st.write(edu.interest_types_simple_pt2)
+    st.plotly_chart(simple_int_plot(), use_container_width=True)
+    st.write("Dicho eso, es ahora de pasar al más interesante de ambos, el interés compuesto!")
     st.write(edu.interest_types_compound)
     st.latex(r'''
         V_f = P * (1 + {r \over n}) ^ {r \over n}
@@ -59,6 +73,8 @@ elif option == page_options[1]: #EDUCATIONAL SECTION __COMPLETED__
     V_f = P * ( 1 + r) ^ n
     ''')
     st.write(edu.interest_types_compound_pt3)
+    st.plotly_chart(comp_int_plot(), use_container_width=True)
+    st.write("¿Aún no te impresiona? pues ve en la próxima sección y mirarás el poder y la magia del interés compuesto!")
     st.markdown("***") ## Section separator.
 
     st.subheader("3. Interés Simple vs Interés Compuesto \U0001F4B0")
@@ -162,4 +178,5 @@ elif option == page_options[2]: #CALCULATIONS __COMPLETED__
 
             dif = (sum_df.max() - sum_df.min()) 
 
-            st.write(f"La diferencia entre el máximo y el mínimo a los **{periods} años** de invertir es de: **{dif:.2f}** USD")
+            st.write(f'''La diferencia entre invertir en **{sum_df.index[sum_df.argmax()]}** (máximo)  o en **{sum_df.index[sum_df.argmin()]}** (mínimo) 
+            a los **{periods} años** de invertir es de: **{dif:.2f}** USD''')

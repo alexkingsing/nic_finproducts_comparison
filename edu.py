@@ -1,6 +1,7 @@
-intro = '''
-    Esta sección esta orientada a proporcionar información sobre interés compuesto y como funciona, y sobretodo, porque es tan potente! \n 
-    Sin más preámbulo, empecemos!'''
+intro = '''Esta sección esta orientada a proporcionar información sobre interés compuesto y como funciona, y sobretodo, **porque es tan potente!** 
+Esperamos que está sección te inspire a aprender más sobre finanzas personales e inversión, y a crecer tú capital!
+\n **Nota**: TODOS los ejemplos y cálculos base se harán con un capital incial de 1,000 USD. Esto es bastante popular en finanzas! 
+\n Sin más preámbulo, empecemos!'''
 
 index = ''' 1. ¿Qué es el interés? \U0001F4CD
 2. ¿Tipos de interés? \U0001F4CD
@@ -10,12 +11,14 @@ interest = ''' La manera más fácil de explicar el interés es: **La ganancia o
 ¿Pero cómo se justifica el interés? ¿De dónde viene? ¿Por qué tengo que darle dinero el banco/prestamista? Sin entrar en una larga historia sobre el origen de los intereses,
 esto se pueden explicar como **el retorno (o ganancia) que permite, con cierta seguridad, justificar este riesgo y costo de oportunidad**. \n
 Bueno, no es 100% comprensible así, no? Separemos el concepto en partes para entenderlo mejor: \n
-1. **El riesgo**: Esta es la parte más fácil de entender. **Es es la estimación de que tan probable es que la persona/entidad que pide el dinero no lo regrese**. 
+1. ***El riesgo***: Esta es la parte más fácil de entender y explicar, aunque **OJO** riesgo puede ser MUCHAS cosas más allá de impago. 
+La definición más simple de riesgo es: **Es es la estimación de que tan probable es que la persona/entidad que pide el dinero no lo regrese**. 
 Organizaciones grandes como aseguradoras o bancos tienen complejos modelos estadísticos para determinar este número, pero entre personas comunes es, literalmente, al azar.
-2. **El costo de oportunidad**: Este es un poco más complejo y puede dividirse en dos partes:\n 
+2. ***El costo de oportunidad***: Este es un poco más complejo y puede dividirse en dos partes:\n 
     * **Inflación**: Esta parte del interés se usa para, de manera simple, **se asegura que el dinero no pierda valor en el tiempo** (un concepto MUY importante en finanzas).
-    Este valor suele obtenerse ya sea de la inflación esperada para el país, o de las tasa de interés del Banco Central. Asimismo esta cifra suele ser la base de todo el interés:
-    dicho de otra manera, **como mínimo, cualquier préstamo debe pagar el interés asociado a la inflación**.
+    Este valor suele obtenerse ya sea de la inflación esperada para el país, o de las tasa de interés del Banco Central, o bonos del Tesoro de U.S.A, etc. 
+    Asimismo esta cifra suele ser la base de todo el interés: dicho de otra manera, **como mínimo, cualquier préstamo debe pagar el interés asociado a la inflación**.
+    Esto con el propósito de que el dinero prestado **no pierda valor en el tiempo**.
     * **Oportunidad**: Esta parte puede considerarse la más compleja y es la que realmente se asocia la 'ganancia' que el prestamista quiere obtener por darte este dinero. 
     Hay muchísimas maneras de calcular esta parte, pero en general esto dependerá de los objetivos de recaudación de la empresa. \n
 Matemáticamente el interés puede verse como:'''
@@ -39,8 +42,7 @@ Un cálculo simple nos dice que el interés a pagar por año es de 500 USD anual
 Pero que pasa si te retrasas y en vez de pagar exactamente al año? Dependiendo de los términos de tú préstamo podrías estar sujeto a una mora o penalización, pero en cuanto a los interes
 **tus intereses a la fecha de pago NO generan más interes** el ÚNICO interés generado es aquel que se origina del principal.
 Esta premisa (el interés no genera más interés) es lo que hace que este se llame interés simple. \n
-Dicho eso, es ahora de pasar al más interesante de ambos, el interés compuesto! \n
-
+Si quieres verlo gráficamente, **el interés simple es una simple línea recta!**
 '''
 
 ###################################### SECTION SEPARATOR #######################################
@@ -66,7 +68,7 @@ Pero vamos, para verlo vía fórmulas es fácil encontrar un libro. ¿Qué tal u
  Al final del año, tú recibes 1,000 + 10% = 1,100, pero para los olvidadizos entre nosotros, si se nos va y no retiramos el depósito, el banco automáticamente lo invierte de nuevo!
  pero entonces, ¿qué pasa con nuestro dinero? pues sucede que está renovación es casi como un nuevo certificado, pero ahora el principal no es 1,000, sino 1,100!
  Esto quiero decir que el interés al segundo año sería 1,100 + 10% = 1,210 USD! **O sea, obtuvimos interés sobre nuestro interés!**\n
- ¿Aún no te impresiona? pues ve en la próxima sección y mirarás el poder y la magia del interés compuesto!
+ Una vez más, como una imagen dice más que mil palabras, veamos una gráfica del interés compuesto. **OJO** presta atención al tipo de curva \U0001F609
 '''
 
 ###################################### SECTION SEPARATOR #######################################

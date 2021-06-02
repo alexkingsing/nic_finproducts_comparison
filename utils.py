@@ -67,6 +67,51 @@ def plot_data(df : pd.DataFrame) -> go.Figure:
 
     return fig
 
+def simple_int_plot() -> any:
+    base_simp = [] # placeholder list for simple interest build
+
+    for i in range(0,30):
+        base_simp.append(50 * (i))
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+    x = list(range(0,30)),
+    y = base_simp,
+    mode = "lines + markers",
+    name = "Interés simple acumulado",
+    line = dict(color = "green"))
+    )
+
+    fig.update_layout(showlegend = True)
+
+    return fig
+
+def comp_int_plot() -> any:
+    val = 1000 # default value
+    base_comp = [] #placeholder list for compound interest build
+
+    for i in range(0,30):
+        base_comp.append(val * ((1.05)**i))
+
+    base_comp = np.array(base_comp)
+    base_comp = base_comp - val
+    base_comp = base_comp.tolist()
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+    x = list(range(0,30)),
+    y = base_comp,
+    mode = "lines + markers",
+    name = "Interés compuesto acumulado",
+    line = dict(color = "blue"))
+    )
+
+    fig.update_layout(showlegend = True)
+
+    return fig
+
 def sample_plot() -> any:
 
     val = 1000 # default value
@@ -95,7 +140,8 @@ def sample_plot() -> any:
     x = list(range(0,30)),
     y = base_comp,
     mode = "lines + markers",
-    name = "Interés compuesto acumulado")
+    name = "Interés compuesto acumulado",
+    line = dict(color = "blue"))
     )
 
     return fig
