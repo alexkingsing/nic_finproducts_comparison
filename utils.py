@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 #useful lists and parameters
-page_options = ["Intro", "Educativo", "Calculo int. compuesto"]
+page_options = ["Intro", "Educativo - Interés comp.", "Calculo int. compuesto"]
 fin_prod_list = ["Cuenta", "Depósito", "Bolsa"]
 
 ##### FUNCTIONS ##################
@@ -35,6 +35,10 @@ def row_cal(array, ir_save, ir_deposit, ir_stock, contri, multi) -> np.array:
         # add previous value + gained interest per the period
 
 def plot_data(df : pd.DataFrame) -> go.Figure:
+    '''
+    Given a Pandas Dataframe; plots according to the specified parameters.
+    RETURNS a Plotly.go Figure object.
+    '''
 
     data = df
     columns = list(data.columns)

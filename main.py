@@ -13,8 +13,6 @@ st.title("El poder del interés compuesto")
 st.sidebar.title("Escoge como seguir!")
 option = st.sidebar.radio("", page_options, index = 0)
 
-
-
 if option == page_options[0]: #INTRODUCTION SECTION __COMPLETED__
     st.header("Bienvenid@! \U0001F44B") # Unicode escape character needed for Emoji
 
@@ -140,7 +138,7 @@ elif option == page_options[2]: #CALCULATIONS __COMPLETED__
                 value = 1000, step = 100)
 
             submitted = st.form_submit_button("Vamos!!") ## MANDATORY BOOLEAN OPTION
-            st.caption("Dar click acá cada vez que actualices data!")
+            st.caption("Dar click acá para iniciar o cada vez que actualices data!")
 
     if submitted == True:
         last_row = np.full((3, 1), contr_val) ## CREATING THE INITIAL CONSTRUCTOR 2-D ARRAY BASED ON FINANCING OPTIONS. THIS WILL BE OVERWRITTEN AT THE LOOP.

@@ -42,7 +42,7 @@ Un cálculo simple nos dice que el interés a pagar por año es de 500 USD anual
 Pero que pasa si te retrasas y en vez de pagar exactamente al año? Dependiendo de los términos de tú préstamo podrías estar sujeto a una mora o penalización, pero en cuanto a los interes
 **tus intereses a la fecha de pago NO generan más interes** el ÚNICO interés generado es aquel que se origina del principal.
 Esta premisa (el interés no genera más interés) es lo que hace que este se llame interés simple. \n
-Si quieres verlo gráficamente, **el interés simple es una simple línea recta!**
+Si quieres verlo gráficamente, **el interés simple es una línea recta en el eje del tiempo!**
 '''
 
 ###################################### SECTION SEPARATOR #######################################
@@ -68,7 +68,8 @@ Pero vamos, para verlo vía fórmulas es fácil encontrar un libro. ¿Qué tal u
  Al final del año, tú recibes 1,000 + 10% = 1,100, pero para los olvidadizos entre nosotros, si se nos va y no retiramos el depósito, el banco automáticamente lo invierte de nuevo!
  pero entonces, ¿qué pasa con nuestro dinero? pues sucede que está renovación es casi como un nuevo certificado, pero ahora el principal no es 1,000, sino 1,100!
  Esto quiero decir que el interés al segundo año sería 1,100 + 10% = 1,210 USD! **O sea, obtuvimos interés sobre nuestro interés!**\n
- Una vez más, como una imagen dice más que mil palabras, veamos una gráfica del interés compuesto. **OJO** presta atención al tipo de curva \U0001F609
+ Una vez más, como una imagen dice más que mil palabras, veamos una gráfica del interés compuesto. **OJO** presta atención al tipo de curva \U0001F609 \n
+ ¿Ves alguna diferencia? Esta no es una línea recta, es una **curva exponencial**.
 '''
 
 ###################################### SECTION SEPARATOR #######################################
@@ -97,7 +98,7 @@ Finalmente una nota: Los productos financieros utilizados acá son para propósi
 ###################################### SECTION SEPARATOR #######################################
 
 annex = '''
-**Esta sección es completamente opcional** y la derivación matemática del interés compuesto: \n
+**Esta sección es completamente opcional** y explica paso a paso la derivación matemática del interés compuesto: \n
 Antes que todo recordemos la fórmula más básica para obtener el interés:
 '''
 
@@ -119,7 +120,7 @@ Nuestra equación para más de un período se vería así:
 '''
 
 annex_5 = '''
-Hay algo que notar acá! Interés para el 2do período (I sub-uno) depende NO del principal, sino del **Valor final del período anterior**. De forma que:
+Hay algo que notar acá! Interés para el 2do período (I sub-uno) **depende NO del principal, sino del v  alor final del período anterior**. De forma que:
 '''
 
 annex_6 = '''
